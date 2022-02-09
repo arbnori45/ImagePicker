@@ -22,8 +22,8 @@ protocol ImageGalleryPanGestureDelegate: class {
 open class ImageGalleryView: UIView {
 
   struct Dimensions {
-    static let galleryHeight: CGFloat = 160
-    static let galleryBarHeight: CGFloat = 24
+    static let galleryHeight: CGFloat = 250
+    static let galleryBarHeight: CGFloat = 60
   }
 
   var configuration = ImagePickerConfiguration()
@@ -238,7 +238,7 @@ extension ImageGalleryView: UICollectionViewDelegate {
       guard let visibleCells = collectionView.visibleCells as? [ImageGalleryViewCell] else { return }
       for cell in visibleCells where cell.selectedImageView.image != nil {
         UIView.animate(withDuration: 0.2, animations: {
-          cell.selectedImageView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+          cell.selectedImageView.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
         }, completion: { _ in
           cell.selectedImageView.image = nil
         })
@@ -251,6 +251,8 @@ extension ImageGalleryView: UICollectionViewDelegate {
       guard image != nil else { return }
 
       if cell.selectedImageView.image != nil {
+        cell.checkmarkImage.isHidden = true
+        cell.alpha = 1
         UIView.animate(withDuration: 0.2, animations: {
           cell.selectedImageView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
           }, completion: { _ in
@@ -259,7 +261,9 @@ extension ImageGalleryView: UICollectionViewDelegate {
         self.selectedStack.dropAsset(asset)
       } else if self.imageLimit == 0 || self.imageLimit > self.selectedStack.assets.count {
         cell.selectedImageView.image = AssetManager.getImage("selectedImageGallery")
-        cell.selectedImageView.transform = CGAffineTransform(scaleX: 0, y: 0)
+        cell.selectedImageView.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
+        cell.checkmarkImage.isHidden = false
+        cell.alpha = 0.7
         UIView.animate(withDuration: 0.2, animations: {
           cell.selectedImageView.transform = CGAffineTransform.identity
         })

@@ -6,6 +6,17 @@ class ImageGalleryViewCell: UICollectionViewCell {
   lazy var selectedImageView = UIImageView()
   private var videoInfoView: VideoInfoView
 
+  let checkmarkImage: UIImageView = {
+    if #available(iOS 13.0, *) {
+      let imageView = UIImageView(image: UIImage(systemName: "checkmark"))
+      imageView.translatesAutoresizingMaskIntoConstraints = false
+      return imageView
+    } else {
+      // Fallback on earlier versions
+    }
+    return UIImageView()
+  }()
+
   private let videoInfoBarHeight: CGFloat = 15
   var duration: TimeInterval? {
     didSet {
@@ -33,6 +44,10 @@ class ImageGalleryViewCell: UICollectionViewCell {
 
     isAccessibilityElement = true
     accessibilityLabel = "Photo"
+
+    //add checkmark
+    contentView.addSubview(checkmarkImage)
+    checkmarkImage.isHidden = true
 
     setupConstraints()
   }

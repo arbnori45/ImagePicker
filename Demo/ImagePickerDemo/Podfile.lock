@@ -1,5 +1,5 @@
 PODS:
-  - ImagePicker (3.1.0)
+  - ImagePicker (3.2.0)
 
 DEPENDENCIES:
   - ImagePicker (from `../../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../../"
 
 SPEC CHECKSUMS:
-  ImagePicker: db1fd7626337b2577c523bef5f499bbbe5a37079
+  ImagePicker: 1d950bbb2422548ed58791b4ec7f42fe42920511
 
 PODFILE CHECKSUM: 23900dc409ff6cf1fd583a459dd91c9db12e588b
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.2

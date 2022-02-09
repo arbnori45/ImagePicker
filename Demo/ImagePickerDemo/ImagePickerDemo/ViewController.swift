@@ -38,12 +38,13 @@ class ViewController: UIViewController, ImagePickerDelegate {
     let config = ImagePickerConfiguration()
     config.doneButtonTitle = "Finish"
     config.noImagesTitle = "Sorry! There are no images here!"
+    config.allowMultiplePhotoSelection = true
     config.recordLocation = false
-    config.allowVideoSelection = true
+//    config.allowVideoSelection = true
 
     let imagePicker = ImagePickerController(configuration: config)
     imagePicker.delegate = self
-
+    imagePicker.modalPresentationStyle = .fullScreen
     present(imagePicker, animated: true, completion: nil)
   }
 
