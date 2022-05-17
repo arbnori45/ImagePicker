@@ -1,16 +1,25 @@
 PODS:
-  - ImagePicker (3.2.0)
+  - ImagePicker (3.2.0):
+    - ZLImageEditor
+  - ZLImageEditor (1.0.7):
+    - ZLImageEditor/Core (= 1.0.7)
+  - ZLImageEditor/Core (1.0.7)
 
 DEPENDENCIES:
   - ImagePicker (from `../../`)
+
+SPEC REPOS:
+  trunk:
+    - ZLImageEditor
 
 EXTERNAL SOURCES:
   ImagePicker:
     :path: "../../"
 
 SPEC CHECKSUMS:
-  ImagePicker: 1d950bbb2422548ed58791b4ec7f42fe42920511
+  ImagePicker: 023c90157ac82f39ea749f23fd58465a2bb151be
+  ZLImageEditor: eae3fcfa3050b42111d53bd4c611c26637ef604d
 
 PODFILE CHECKSUM: 23900dc409ff6cf1fd583a459dd91c9db12e588b
 
-COCOAPODS: 1.10.2
+COCOAPODS: 1.11.3

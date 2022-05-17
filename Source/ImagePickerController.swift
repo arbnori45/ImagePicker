@@ -388,13 +388,12 @@ extension ImagePickerController: BottomContainerViewDelegate {
       images = AssetManager.resolveAssets(stack.assets)
     }
 
-//    delegate?.doneButtonDidPress(self, images: images)
     ZLImageEditorConfiguration.default()
-        .editImageTools([.draw, .clip, .imageSticker, .textSticker, .mosaic, .filter, .adjust])
+        .editImageTools([.draw, .clip, .textSticker, .adjust])
         .adjustTools([.brightness, .contrast, .saturation])
 
     ZLEditImageViewController.showEditImageVC(parentVC: self, image: images.first!, editModel: nil) { [weak self] (resImage, editModel) in
-        // your code
+      self?.delegate?.doneButtonDidPress(self!, images: [resImage])
     }
     
   }
