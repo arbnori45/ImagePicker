@@ -246,12 +246,10 @@ extension ImageGalleryView: UICollectionViewDelegate {
     }
 
     let asset = assets[(indexPath as NSIndexPath).row]
-
     AssetManager.resolveAsset(asset, size: CGSize(width: 100, height: 100), shouldPreferLowRes: configuration.useLowResolutionPreviewImage) { image in
       guard image != nil else { return }
 
       if cell.selectedImageView.image != nil {
-        cell.checkmarkImage.isHidden = true
         cell.alpha = 1
         UIView.animate(withDuration: 0.2, animations: {
           cell.selectedImageView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
@@ -262,7 +260,6 @@ extension ImageGalleryView: UICollectionViewDelegate {
       } else if self.imageLimit == 0 || self.imageLimit > self.selectedStack.assets.count {
         cell.selectedImageView.image = AssetManager.getImage("selectedImageGallery")
         cell.selectedImageView.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
-        cell.checkmarkImage.isHidden = false
         cell.alpha = 0.7
         UIView.animate(withDuration: 0.2, animations: {
           cell.selectedImageView.transform = CGAffineTransform.identity

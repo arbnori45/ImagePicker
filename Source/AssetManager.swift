@@ -4,10 +4,8 @@ import Photos
 
 extension Bundle {
     static func myResourceBundle() -> Bundle? {
-        let bundles = Bundle.allBundles
-        let bundlePaths = bundles.compactMap { $0.resourceURL?.appendingPathComponent("ImagePicker", isDirectory: false).appendingPathExtension("bundle") }
-
-        return bundlePaths.compactMap({ Bundle(url: $0) }).first
+        let bundle = Bundle(for: AssetManager.self)
+        return bundle
     }
 }
 

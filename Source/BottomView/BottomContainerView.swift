@@ -93,7 +93,7 @@ open class BottomContainerView: UIView {
       pickerButton.isHidden = true
     }
     if !configuration.allowMultiplePhotoSelection {
-      stackView.isHidden = true
+//      stackView.isHidden = true
     }
   }
 

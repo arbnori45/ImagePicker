@@ -201,8 +201,6 @@ extension ImageGalleryViewCell {
         relatedBy: .equal, toItem: self, attribute: attribute,
         multiplier: 1, constant: 0))
     }
-    checkmarkImage.centerXAnchor.constraint(equalTo: selectedImageView.centerXAnchor).isActive = true
-    checkmarkImage.centerYAnchor.constraint(equalTo: selectedImageView.centerYAnchor).isActive = true
   }
 }
 

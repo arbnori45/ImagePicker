@@ -44,7 +44,7 @@ import UIKit
   @objc public var canRotateCamera = true
   @objc public var collapseCollectionViewWhileShot = true
   @objc public var recordLocation = true
-  @objc public var allowMultiplePhotoSelection = true
+  @objc public var allowMultiplePhotoSelection = false
   @objc public var allowVideoSelection = false
   @objc public var showsImageCountLabel = true
   @objc public var flashButtonAlwaysHidden = false
