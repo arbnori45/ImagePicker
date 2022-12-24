@@ -391,6 +391,8 @@ extension ImagePickerController: BottomContainerViewDelegate {
     ZLImageEditorConfiguration.default()
         .editImageTools([.draw, .clip, .textSticker, .adjust])
         .adjustTools([.brightness, .contrast, .saturation])
+        .editDoneBtnBgColor(UIColor(red: 0.0, green: 0.588, blue: 0.725, alpha: 1.0))
+        .adjustSliderTintColor(.black)
 
     ZLEditImageViewController.showEditImageVC(parentVC: self, image: images.first!, editModel: nil) { [weak self] (resImage, editModel) in
       self?.delegate?.doneButtonDidPress(self!, images: [resImage])
